@@ -83,7 +83,6 @@ class LazyConnection2(object):
 
 conn = LazyConnection2(('www.python.org', 80))  # 允许嵌套使用with语句建立多个连接
 with conn as s1:
-    pass
     with conn as s2:
         pass
 

@@ -27,8 +27,7 @@ print("不使用yield from的递归生成器")
 def flatten2(items, ignore_types=(str, bytes)):
     for x in items:
         if isinstance(x, Iterable) and not isinstance(x, ignore_types):
-            for x in flatten2(x):  # 这里依然需要使用递归
-                yield x
+            yield from flatten2(x)
         else:
             yield x
 

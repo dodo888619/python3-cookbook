@@ -12,7 +12,7 @@ def LoggedMapping(cls):
     cls_delitem = cls.__delitem__
 
     def __getitem__(self, key):
-        print('Getting ' + str(key))
+        print(f'Getting {str(key)}')
         return cls_getitem(self, key)
 
     def __setitem__(self, key, value):
@@ -20,7 +20,7 @@ def LoggedMapping(cls):
         return cls_setitem(self, key, value)
 
     def __delitem__(self, key):
-        print('Deleting ' + str(key))
+        print(f'Deleting {str(key)}')
         return cls_delitem(self, key)
 
     cls.__getitem__ = __getitem__

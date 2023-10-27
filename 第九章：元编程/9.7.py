@@ -15,12 +15,11 @@ class Fib(object):
         return self
 
     def __next__(self):
-        if self.n < 0:
-            self.pre, self.cur = self.cur, self.pre + self.cur
-            return self.cur
-        else:
+        if self.n >= 0:
             raise StopIteration
+        self.pre, self.cur = self.cur, self.pre + self.cur
+        return self.cur
 
 
 f = Fib(10)
-print([i for i in f])
+print(list(f))

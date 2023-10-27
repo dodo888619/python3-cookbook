@@ -12,10 +12,8 @@ import threading
 
 # 1.将对象保存到文件中
 data = 'my file content'
-f = open('pickle_file.txt', 'wb')
-pickle.dump(data, f)
-f.close()
-
+with open('pickle_file.txt', 'wb') as f:
+    pickle.dump(data, f)
 # 2.将对象转换为字符串
 s = pickle.dumps(data)
 print(s)
@@ -57,9 +55,7 @@ class Countdown(object):
 
 c = Countdown(30)
 
-f2 = open('file3.txt', 'wb')
-pickle.dump(c, f2)
-f2.close()
-
+with open('file3.txt', 'wb') as f2:
+    pickle.dump(c, f2)
 f3 = open('file3.txt', 'rb')
 pickle.load(f3)

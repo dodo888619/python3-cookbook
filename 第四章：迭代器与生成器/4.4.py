@@ -81,15 +81,12 @@ class DepthFirstIterator(object):
         if self._children_iter is None:
             self._children_iter = iter(self._node)
             return self._node
-        # If processing a child, return its next item
         elif self._child_iter:
             try:
-                nextchild = next(self._child_iter)
-                return nextchild
+                return next(self._child_iter)
             except StopIteration:
                 self._child_iter = None
                 return next(self)
-        # Advance to the next child and start its iteration
         else:
             self._child_iter = next(self._children_iter).depth_first()
             return next(self)

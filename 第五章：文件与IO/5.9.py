@@ -20,7 +20,7 @@ with open('data.bin', 'wb') as f:
 buf = read_into_buffer('data.bin')
 print(buf)
 
-buf[0:5] = b'hELLO'
+buf[:5] = b'hELLO'
 print(buf)
 
 with open('newdata.bin', 'wb') as f:

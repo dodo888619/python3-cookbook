@@ -24,7 +24,7 @@ mylist = [1, 4, -5, 10, -7, 2, 3, -1]
 import math
 
 print([math.sqrt(n) for n in mylist if n > 0])
-print([n if n > 0 else 0 for n in mylist])
+print([max(n, 0) for n in mylist])
 
 """
 另外一个值得关注的过滤工具就是 itertools.compress() ，

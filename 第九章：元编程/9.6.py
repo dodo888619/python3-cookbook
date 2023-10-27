@@ -12,9 +12,7 @@ def task():
 
 if __name__ == "__main__":
     start = time.time()
-    coroutins = []
-    for _ in range(1000000):
-        coroutins.append(gevent.spawn(task))
+    coroutins = [gevent.spawn(task) for _ in range(1000000)]
     gevent.joinall(coroutins)
 
     print(time.time() - start)

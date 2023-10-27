@@ -7,13 +7,13 @@ import re
 # 字节字符串上的字符串操作
 # 你想在字节字符串上执行普通的文本操作(比如移除，搜索和替换)。
 data = b'Hello World'
-print(data[0:5])
+print(data[:5])
 print(data.startswith(b'Hello'))
 print(data.split())
 print(data.replace(b'Hello', b'Hello Cruel'))
 # 这些操作也同样适用于字节组。比如：
 data = bytearray(b'Hello World')
-print(data[0:5])
+print(data[:5])
 print(data.startswith(b'Hello'))
 print(data.split())
 print(data.replace(b'Hello', b'Hello Cruel'))
