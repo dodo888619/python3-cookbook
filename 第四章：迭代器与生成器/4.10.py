@@ -20,7 +20,7 @@ with open('file.txt', 'r', encoding='utf-8') as f:
 # 统计一篇文章里面每个单词出现的次数
 with open('TOEFL.txt', 'r', encoding='utf-8') as f2:
     word_summard = defaultdict(int)
-    for no, line in enumerate(f2):
+    for line in f2:
         words = (w.strip().lower() for w in line.split())
         for word in words:
             word_summard[word] += 1

@@ -31,4 +31,4 @@ with open('file.txt', 'r', encoding='utf-8') as f:
     for l in lines:
         if 'Python' in l:
             for lineno, line in lines.history:
-                print("{}: {}".format(lineno, line))
+                print(f"{lineno}: {line}")

@@ -24,7 +24,6 @@ class B(object):
         pass
 
     def public_method(self):
-        pass
         self.__private_method()
 
 

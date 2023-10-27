@@ -16,7 +16,7 @@ print(math.isinf(a), math.isinf(b), math.isnan(c))
 # 无穷大数在执行数学计算的时候会传播，比如：
 print(a + 45, a * 10, 10 / a)
 # 但是有些操作时未定义的并会返回一个NaN结果。比如：
-print(a / a, a + b)
+print(1.0, a + b)
 # NaN值会在所有操作中传播，而不会产生异常。比如：
 print(c + 23, c / 2, c * 2, math.sqrt(c))
 # NaN值的一个特别的地方时它们之间的比较操作总是返回False。比如：

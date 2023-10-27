@@ -16,17 +16,16 @@ weekdays = [
 
 def get_previous_byday(dayname, start_date=None):
     if start_date is None:
-        start_date = datetime.today()
+        start_date = datetime.now()
     day_num = start_date.weekday()
     day_num_target = weekdays.index(dayname)
     days_ago = (7 + day_num - day_num_target) % 7
     if days_ago == 0:
         days_ago = 7
-    target_date = start_date - timedelta(days=days_ago)
-    return target_date
+    return start_date - timedelta(days=days_ago)
 
 
-print(datetime.today())
+print(datetime.now())
 print(get_previous_byday('Monday'))
 print(get_previous_byday('Wednesday'))
 print(get_previous_byday('Thursday'))
@@ -39,7 +38,7 @@ get_previous_byday('Sunday', datetime(1993, 11, 7))
 如果你要像这样执行大量的日期计算的话，你最好安装第三方包 python-dateutil 来代替。
 """
 # 上周五的日期
-today = datetime.today()
+today = datetime.now()
 print(today + relativedelta.relativedelta(weekday=FR(-1)))
 # 本周五的日期
 print(today + relativedelta.relativedelta(weekday=FR))

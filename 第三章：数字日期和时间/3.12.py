@@ -19,7 +19,7 @@ print(a + timedelta(days=10))
 b = datetime(2012, 12, 21)
 print((b - a).days)
 
-print(datetime.today() + timedelta(minutes=10))
+print(datetime.now() + timedelta(minutes=10))
 # 在计算的时候需要注意datetime会自动处理闰年。比如：
 a = datetime(2012, 3, 1)
 b = datetime(2012, 2, 28)

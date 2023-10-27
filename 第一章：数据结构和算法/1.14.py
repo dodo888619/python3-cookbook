@@ -18,7 +18,7 @@ class User(object):
         self.user_id = user_id
 
     def __repr__(self):
-        return 'User({})'.format(self.user_id)
+        return f'User({self.user_id})'
 
 
 def sort_notcompare():

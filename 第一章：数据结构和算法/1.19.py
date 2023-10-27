@@ -9,7 +9,7 @@ s = sum(x * x for x in nums)
 print(s)
 s = sum((x * x for x in nums))
 print(s)
-s = sum([x * x for x in nums])
+s = sum(x * x for x in nums)
 print(s)
 # Deter if any .py files exit in a directory
 import os

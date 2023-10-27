@@ -20,5 +20,5 @@ class Type(Descriptor):
 
     def __set__(self, instance, value):
         if not isinstance(value, self.expected_type):
-            raise TypeError('expected' + str(self.expected_type))
+            raise TypeError(f'expected{str(self.expected_type)}')
         super().__set__(instance, value)

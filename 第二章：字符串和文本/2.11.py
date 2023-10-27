@@ -23,7 +23,7 @@ print(s.replace(' ', ''))
 with open('filename.txt', 'r', encoding='utf-8') as f:
     lines = (line.strip() for line in f)
     for line in lines:
-        print(line + 'a')
+        print(f'{line}a')
 """
 在这里，表达式 lines = (line.strip() for line in f) 执行数据转换操作。
 这种方式非常高效，因为它不需要预先读取所有数据放到一个临时的列表中去。

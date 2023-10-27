@@ -65,7 +65,7 @@ class ExpressionEvaluator:
     def _expect(self, toktype):
         'Consume next token if it matches toktype or raise SyntaxError'
         if not self._accept(toktype):
-            raise SyntaxError('Expected ' + toktype)
+            raise SyntaxError(f'Expected {toktype}')
 
     # Grammar rules follow
     def expr(self):

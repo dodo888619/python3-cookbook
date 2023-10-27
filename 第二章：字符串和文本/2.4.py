@@ -53,7 +53,7 @@ print(month, day, year)
 print(date_pat.findall(text))
 
 for month, day, year in date_pat.findall(text):
-    print('{}-{}-{}'.format(year, month, day))
+    print(f'{year}-{month}-{day}')
 
 """
 findall()方法会搜索文本并以列表的形式返回所有的匹配。

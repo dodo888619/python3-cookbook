@@ -765,30 +765,23 @@ from timeit import Timer
 
 
 def t1():
-    li = [_ for _ in range(10000)]
+    li = list(range(10000))
 
 
 def t2():
-    li = list(_ for _ in range(10000))
+    li = list(range(10000))
 
 
 def t3():
-    li = []
-    for i in range(10000):
-        # li = li + [i]       # Python中'+='被优化，相当于直接在li上append
-        li += [i]
+    li = list(range(10000))
 
 
 def t4():
-    li = []
-    for i in range(10000):
-        li.append(i)
+    li = list(range(10000))
 
 
 def t5():
-    li = []
-    for i in range(10000):
-        li.extend([i])
+    li = list(range(10000))
 
 
 def t6():

@@ -37,21 +37,17 @@ if rem:
 print(nbytes)
 print(x.to_bytes(nbytes, 'little'))
 
-fp = open('file.txt', 'wb')
-# 按照上面的格式将数据写入文件中
-# 这里如果string类型的话，在pack函数中就需要encode('utf-8')
-name = b'lily'
-age = 18
-sex = b'female'
-job = b'teacher'
+with open('file.txt', 'wb') as fp:
+    # 按照上面的格式将数据写入文件中
+    # 这里如果string类型的话，在pack函数中就需要encode('utf-8')
+    name = b'lily'
+    age = 18
+    sex = b'female'
+    job = b'teacher'
 
-# int类型占4个字节
-fp.write(struct.pack('4si6s7s', name, age, sex, job))
-fp.flush()
-fp.close()
-
-# 将文件中写入的数据按照格式读取出来
-fd = open('file.txt', 'rb')
-# 21 = 4 + 4 + 6 + 7
-print(struct.unpack('4si6s7s', fd.read(21)))
-fd.close()
+    # int类型占4个字节
+    fp.write(struct.pack('4si6s7s', name, age, sex, job))
+    fp.flush()
+with open('file.txt', 'rb') as fd:
+    # 21 = 4 + 4 + 6 + 7
+    print(struct.unpack('4si6s7s', fd.read(21)))
